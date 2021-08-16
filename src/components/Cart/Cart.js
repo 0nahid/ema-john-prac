@@ -12,15 +12,23 @@ const Cart = (props) => {
     } else if (total > 0) {
         shipping = 12.99;
     }
-    const tax = total / 10;
-    const grandTotal = total + shipping + tax;
+    // number format
+    const numberFormat = num => {
+        const precision = num.toFixed(2);
+        return Number(precision);
+    }
+    // price part
+    const tax = numberFormat(total / 10);
+    const grandTotal = numberFormat(total + shipping + tax);
     return (
-        <div>
-            <h1 className="text-2xl">Order Summary</h1>
-            <h1>Items Order : {cart.length}</h1>
-            <h1>Shipping Charge : $ {shipping} </h1>
-            <h1>TAX + vat : $ {tax} </h1>
-            <h1>Total : $ {grandTotal} </h1>
+        <div className=" shadow p-8 border-gray-400 ">
+            <div className="">
+                <h1 className="text-3xl">Order Summary</h1>
+                <h1 className="text-xl">Items Order : {cart.length}</h1>
+            </div>
+            <h1 className="text-xl">Shipping Charge : $ {numberFormat(shipping)} </h1>
+            <h1 className="text-xl">TAX + vat : $ {tax} </h1>
+            <h1 className="text-xl text-red-700 font-bold">Total : $ {grandTotal} </h1>
         </div>
     );
 };
