@@ -12,8 +12,8 @@ const Product = (props) => {
                     <p>By : {seller} </p>
                     <p>Only : {stock} items left - Order fast!!! </p>
                     <button
-                        onClick={() => props.handleAddProduct(props.product)}
-                        className=" bg-yellow-600 text-white mt-2 py-1 px-2 transition-colors duration-150  rounded ring ring-gray-300 focus:shadow-outline hover:bg-yellow-800 " > <FaShoppingCart className=" w-6 h-6 float-left mr-2" /> Add to Cart</button>
+                onClick={() => props.handleAddProduct(props.product)}
+              className=" bg-indigo-500 text-white mt-2 py-1 px-2 transition-colors duration-100  rounded ring ring-indigo-400 focus:shadow-outline hover:bg-indigo-800 " > <FaShoppingCart className=" w-6 h-6 float-left mr-2" /> Add to Cart</button>
                 </div>
             </div>
         </div>

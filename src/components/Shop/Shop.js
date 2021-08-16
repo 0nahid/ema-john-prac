@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import fakeData from './../../fakeData/index';
 
@@ -6,10 +7,13 @@ const Shop = () => {
     const first10 = fakeData.slice(0, 10);
     // eslint-disable-next-line
     const [products, setProducts] = useState(first10);
+    // eslint-disable-next-line
     const [cart, setCart] = useState([]);
 
     const handleAddProduct = (product) => {
-        console.log('added product', product);
+        // console.log('added product', product);
+        const newCart = [...cart, product];
+        setCart(newCart);
     }
 
     return (
@@ -21,10 +25,8 @@ const Shop = () => {
                 >
                 </Product>)}
             </div>
-            <div>
-                <h1 className="">This is cart</h1>
-                <h1>Order Summary {cart.length} </h1>
-                
+            <div className="ml-2">
+                <Cart cart={cart} ></Cart>
             </div>
         </div>
     );
