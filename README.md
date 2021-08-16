@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# This site is created with tailwindcss & added react icon for icon library
 
 ## Available Scripts
 
@@ -10,6 +10,7 @@ The page will reload if you make edits.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.
@@ -17,4 +18,3 @@ Builds the app for production to the `build` folder.
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
