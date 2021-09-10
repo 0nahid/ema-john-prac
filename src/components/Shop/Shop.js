@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addToDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import fakeData from './../../fakeData/index';
@@ -11,9 +12,11 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     const handleAddProduct = (product) => {
-        // console.log('added product', product);
         const newCart = [...cart, product];
         setCart(newCart);
+        const sameProducts = newCart.filter(pd => pd.key === product.key);
+        const count = sameProducts.length;
+        addToDatabaseCart(product.key, count)
     }
 
     return (
@@ -22,6 +25,8 @@ const Shop = () => {
                 {products.map(product => <Product
                     product={product}
                     handleAddProduct={handleAddProduct}
+                    key={product.key}
+                    showAddToCart={true}
                 >
                 </Product>)}
             </div>
